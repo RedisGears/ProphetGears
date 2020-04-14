@@ -1,0 +1,13 @@
+Cython
+cmdstanpy==0.9.5
+pystan
+numpy
+pandas
+matplotlib
+LunarCalendar
+convertdate
+holidays
+setuptools-git
+python-dateutil 
+tqdm
+fbprophet==0.6

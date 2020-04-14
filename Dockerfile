@@ -1,0 +1,20 @@
+FROM redislabs/redismod:edge as redismod
+
+ENV DEPS "gcc g++ build-essential python-pip"
+
+# Set up a build environment
+RUN set -ex;\
+    deps="$DEPS";\
+    apt-get update;\
+    apt-get install -y --no-install-recommends $deps;
+       
+# ENV PYTHONPATH /usr/lib/redis/modules/deps/cpython/Lib
+ENTRYPOINT ["redis-server"]
+CMD ["--loadmodule", "/usr/lib/redis/modules/redisai.so", \
+    "--loadmodule", "/usr/lib/redis/modules/redisearch.so", \
+    "--loadmodule", "/usr/lib/redis/modules/redisgraph.so", \
+    "--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
+    "--loadmodule", "/usr/lib/redis/modules/rejson.so", \
+    "--loadmodule", "/usr/lib/redis/modules/redisbloom.so", \
+    "--loadmodule", "/var/opt/redislabs/lib/modules/redisgears.so", \
+    "PythonHomeDir", "/opt/redislabs/lib/modules/python3"]
