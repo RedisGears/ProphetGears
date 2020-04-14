@@ -15,5 +15,8 @@ python3 gears.py --requirements ./requirements.txt predict.py
 ./redisinsight-linux64-1.3.1
 ```
 
+![RedisInsight screenshot](Screenshot.png)
+
+
 
 
