@@ -1,5 +1,8 @@
 # ProphetGears
 
+![RedisInsight screenshot](Screenshot.png)
+
+
 ## Run
 ```bash
 docker build --tag redislabs/prophetgears:edge .
@@ -14,9 +17,4 @@ python3 gears.py --requirements ./requirements.txt predict.py
 ```
 ./redisinsight-linux64-1.3.1
 ```
-
-![RedisInsight screenshot](Screenshot.png)
-
-
-
 
