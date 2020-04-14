@@ -1,6 +1,6 @@
 # ProphetGears
 
-![RedisInsight screenshot](Screenshot.png)
+![RedisInsight screencase](Screencast.gif)
 
 
 ## Run
