@@ -10,11 +10,6 @@ RUN set -ex;\
        
 # ENV PYTHONPATH /usr/lib/redis/modules/deps/cpython/Lib
 ENTRYPOINT ["redis-server"]
-CMD ["--loadmodule", "/usr/lib/redis/modules/redisai.so", \
-    "--loadmodule", "/usr/lib/redis/modules/redisearch.so", \
-    "--loadmodule", "/usr/lib/redis/modules/redisgraph.so", \
-    "--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
-    "--loadmodule", "/usr/lib/redis/modules/rejson.so", \
-    "--loadmodule", "/usr/lib/redis/modules/redisbloom.so", \
+CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
     "--loadmodule", "/var/opt/redislabs/lib/modules/redisgears.so", \
     "PythonHomeDir", "/opt/redislabs/lib/modules/python3"]
