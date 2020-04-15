@@ -10,8 +10,9 @@ docker run -p 6379:6379 -it --rm redislabs/prophetgears:edge
 ```
 
 ```bash
+pip install -r requirements.txt
 python3 load.py 
-python3 gears.py --requirements ./requirements.txt predict.py
+python3 gears.py --requirements ./predict_requirements.txt predict.py
 ```
 
 ```

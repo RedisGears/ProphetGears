@@ -24,7 +24,9 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Load data
-      run: python3 load.py 
+      run: | 
+        pip3 install requirements.txt 
+        python3 load.py 
     
     - name: Run prediction
       run: python3 gears.py --requirements ./requirements.txt predict.py
