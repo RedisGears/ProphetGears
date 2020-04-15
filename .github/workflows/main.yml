@@ -15,6 +15,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8   
 
     - name: Docker build
       run: docker build --tag redislabs/prophetgears:edge .
@@ -22,11 +27,13 @@ jobs:
     - name: Docker run
       run: docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
 
-    # Runs a set of commands using the runners shell
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
     - name: Load data
-      run: | 
-        pip3 install -r requirements.txt 
-        python3 load.py 
+      run: python load.py 
     
     - name: Run prediction
-      run: python3 gears.py --requirements ./requirements.txt predict.py
+      run: python gears.py --requirements ./requirements.txt predict.py
