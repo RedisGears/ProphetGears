@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/RedisGears/ProphetGears/workflows/CI/badge.svg)](https://github.com/RedisGears/ProphetGears/actions)
+
 # ProphetGears
 
 ![RedisInsight screencase](Screencast.gif)
