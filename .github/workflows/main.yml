@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Docker build
+      run: docker build --tag redislabs/prophetgears:edge .
+
+    - name: Docker run
+      run: docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
+
+    # Runs a set of commands using the runners shell
+    - name: Load data
+      run: python3 load.py 
+    
+    - name: Run prediction
+      run: python3 gears.py --requirements ./requirements.txt predict.py
