@@ -1,3 +1,4 @@
 setuptools-git>=1.2
 pandas==0.24.2
-redistimeseries==0.8.0
+redistimeseries>=0.8.0
+gears-cli>-0.1.0
