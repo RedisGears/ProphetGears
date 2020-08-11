@@ -25,7 +25,7 @@ python3 load.py
 
 ##### Run RedisGears to produce predictions
 ```bash
-gears-cli --requirements ./predict_requirements.txt predict.py
+gears-cli run --requirements ./predict_requirements.txt predict.py
 
 ```
 
