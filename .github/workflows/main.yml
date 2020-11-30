@@ -38,4 +38,4 @@ jobs:
       run: python load.py 
     
     - name: Run prediction
-      run: gear-cli run --requirements ./predict_requirements.txt predict.py
+      run: gears-cli run --requirements ./predict_requirements.txt predict.py
