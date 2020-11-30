@@ -27,7 +27,9 @@ jobs:
       run: docker build --tag redislabs/prophetgears:edge .
 
     - name: Docker run
-      run: docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
+      run: |
+        docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
+        sudo journalctl -fu docker.service > out.txt &
 
     - name: Install dependencies
       run: |
