@@ -27,9 +27,7 @@ jobs:
       run: docker build --tag redislabs/prophetgears:edge .
 
     - name: Docker run
-      run: |
-        docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
-        sudo journalctl -fu docker.service > out.txt &
+      run: docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
 
     - name: Install dependencies
       run: |
@@ -40,8 +38,7 @@ jobs:
       run: python load.py 
     
     - name: Run prediction
-      run: |
-        gears-cli run --requirements ./predict_requirements.txt predict.py 
+      run: gears-cli run --requirements ./predict_requirements.txt predict.py 
                 
     - name: Start SSH via Ngrok
       if: ${{ failure() }}
