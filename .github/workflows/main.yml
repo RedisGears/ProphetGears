@@ -39,4 +39,4 @@ jobs:
     
     - name: Run prediction
       run: |
-         pip install -r predict_requirements.txt 
+        gears-cli run --requirements ./predict_requirements.txt predict.py 
