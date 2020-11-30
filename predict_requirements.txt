@@ -1,7 +1,7 @@
 Cython
 cmdstanpy==0.9.5
 pystan
-numpy
+numpy>=1.19.4 
 pandas
 matplotlib
 LunarCalendar
