@@ -13,7 +13,7 @@ jobs:
       - python/save-cache      
       
       - setup_remote_docker:
-        version: 19.03.13
+          version: 19.03.13
         
       - run:
           command: docker build --tag redislabs/prophetgears:edge .
