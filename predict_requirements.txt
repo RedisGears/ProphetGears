@@ -1,5 +1,5 @@
-Cython
-cmdstanpy==0.9.5
+Cython>=0.29.21
+cmdstanpy>=0.9.5
 pystan
 numpy>=1.19.4 
 pandas>=1.1.4
@@ -10,4 +10,4 @@ holidays
 setuptools-git
 python-dateutil 
 tqdm
-fbprophet==0.6
+fbprophet>=0.6
