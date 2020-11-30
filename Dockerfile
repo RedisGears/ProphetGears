@@ -12,5 +12,5 @@ RUN set -ex;\
 ENTRYPOINT ["redis-server"]
 CMD ["--loadmodule", "/usr/lib/redis/modules/redistimeseries.so", \
     "--loadmodule", "/var/opt/redislabs/lib/modules/redisgears.so", \
-    "--logfile", "/var/log/redis/redis-server.log", \
+    "--logfile", "~/redis-server.log", \
     "PythonHomeDir", "/opt/redislabs/lib/modules/python3"]
