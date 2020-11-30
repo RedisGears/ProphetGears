@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      - run:
+          command: docker build --tag redislabs/prophetgears:edge .
+          name: Docker build
+      - run:
+          command: docker run -d -p 6379:6379 -it --rm redislabs/prophetgears:edge
+          name: Docker run
+      - run:
+          command: python load.py 
+          name: Load data
+      - run:
+          command: gears-cli run --requirements ./predict_requirements.txt predict.py 
+          name: Run prediction
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
