@@ -11,3 +11,4 @@ setuptools-git>=1.2
 python-dateutil>=2.8.1  
 tqdm>=4.54.0
 fbprophet>=0.7.1
+pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
