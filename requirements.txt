@@ -2,3 +2,4 @@ setuptools-git>=1.2
 pandas>=1.1.4
 redistimeseries>=1.4.3
 gears-cli>=1.1.0
+redis>=4.3.6 # not directly required, pinned by Snyk to avoid a vulnerability
